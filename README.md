@@ -32,7 +32,7 @@ Si deseas clonar este proyecto y ejecutarlo en tu máquina:
 
 1. **Clona el repositorio:**
    ```bash
-   git clone [https://github.com/tu-usuario/mi-portafolio.git](https://github.com/tu-usuario/mi-portafolio.git)
+   git clone [https://github.com/Pedro-Caballero/miPortafolio.git](https://github.com/Pedro-Caballero/miPortafolio.git)
 
 2. **Instala las dependencias:**
 
@@ -57,7 +57,7 @@ Contraste: Cumplimiento con las normas WCAG de accesibilidad tanto en modo claro
 **📬 Contacto**
 ¿Tienes algún proyecto en mente o quieres charlar sobre tecnología?
 
-LinkedIn: tu-usuario
+LinkedIn: pedro-caballero-ramírez
 
 Email: pedro-caba10@outlook.com
 
