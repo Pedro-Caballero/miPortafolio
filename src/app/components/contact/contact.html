@@ -1,0 +1,58 @@
+<section class="py-20 bg-white dark:bg-gray-900 px-6">
+  <div class="max-w-4xl mx-auto bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 md:p-12 shadow-sm">
+    <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Hablemos de tu proyecto</h2>
+    <p class="text-gray-600 dark:text-gray-300 mb-8">Llena el formulario y me pondré en contacto contigo lo antes posible.</p>
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <div class="flex flex-col">
+        <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
+        <input formControlName="name" type="text" placeholder="Tu nombre"
+               class="p-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition">
+        <span *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="text-red-500 text-xs mt-1">
+          El nombre es requerido (mín. 3 caracteres).
+        </span>
+      </div>
+
+      <div class="flex flex-col">
+        <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+        <input formControlName="email" type="email" placeholder="correo@ejemplo.com"
+               class="p-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition">
+        <span *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="text-red-500 text-xs mt-1">
+          Ingresa un correo electrónico válido.
+        </span>
+      </div>
+
+      <div class="flex flex-col md:col-span-2">
+        <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Mensaje</label>
+        <textarea formControlName="message" rows="4" placeholder="¿En qué puedo ayudarte?"
+                  class="p-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition"></textarea>
+      </div>
+
+
+        <div class="flex items-start space-x-3 mb-6">
+            <input type="checkbox" formControlName="acceptPrivacy" id="privacy" class="...">
+            <label for="privacy" class="text-xs text-gray-500 dark:text-gray-400">
+                He leído y acepto el 
+                <span (click)="togglePrivacyModal()" class="text-blue-600 underline cursor-pointer hover:text-blue-700">
+                aviso de privacidad
+                </span>.
+            </label>
+        </div>
+
+        <app-privacy-policy [isOpen]="showPrivacyModal" (close)="togglePrivacyModal()"></app-privacy-policy>
+
+      <div class="md:col-span-2 text-right">
+        <button type="submit" [disabled]="contactForm.invalid || isLoading"
+                    class="flex items-center justify-center bg-[#25D366] text-white px-10 py-3 rounded-lg hover:bg-[#128C7E] transition-all font-bold">
+            
+            <span *ngIf="!isLoading" class="flex items-center">
+                <span class="mr-2">💬</span> Enviar a WhatsApp
+            </span>
+
+            <span *ngIf="isLoading" class="animate-spin">🌀</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

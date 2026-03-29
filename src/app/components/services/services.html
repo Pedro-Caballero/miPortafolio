@@ -1,0 +1,19 @@
+<section class="py-20 bg-white dark:bg-gray-900 transition-colors duration-500">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16" appScrollReveal>
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Lo que puedo hacer por ti</h2>
+      <p class="mt-4 text-gray-500 dark:text-gray-400">Soluciones digitales a medida con enfoque en resultados.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div *ngFor="let service of services; let i = index" 
+           appScrollReveal 
+           [style.transition-delay]="i * 100 + 'ms'"
+           class="p-8 border border-gray-100 dark:border-gray-800 rounded-2xl hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-300 group">
+        <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">{{ service.icon }}</div>
+        <h3 class="text-xl font-bold mb-4 dark:text-white">{{ service.title }}</h3>
+        <p class="text-gray-500 dark:text-gray-400 leading-relaxed">{{ service.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>

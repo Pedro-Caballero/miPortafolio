@@ -1,0 +1,33 @@
+<nav class="bg-white dark:bg-gray-900 shadow-sm fixed w-full z-50 px-6 py-4">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    
+    <div class="text-xl font-bold text-gray-900 dark:text-white cursor-pointer">
+      MI<span class="text-blue-600">PORTAFOLIO</span>
+      <img src="assets/images/PC.png" alt="Logo" class="inline-block h-8 w-8 ml-2">
+    </div>
+
+    <div class="hidden md:flex space-x-8 font-medium text-gray-600 dark:text-gray-300">
+      <a href="#proyectos" class="hover:text-blue-600 transition">Proyectos</a>
+      <a href="#sobre-mi" class="hover:text-blue-600 transition">Sobre mí</a>
+      <a href="#contacto" class="hover:text-blue-600 transition">Contacto</a>
+    </div>
+
+    <button (click)="toggleMenu()" class="md:hidden text-gray-600 dark:text-gray-300 focus:outline-none">
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path *ngIf="!isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        <path *ngIf="isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <div [class.hidden]="!isMenuOpen" class="md:hidden bg-white dark:bg-gray-900 border-t mt-4 py-4 space-y-4 flex flex-col items-center animate-fade-in">
+    <a (click)="closeMenu()" href="#proyectos" class="text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600">Proyectos</a>
+    <a (click)="closeMenu()" href="#sobre-mi" class="text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600">Sobre mí</a>
+    <a (click)="closeMenu()" href="#contacto" class="text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 font-bold bg-blue-600 text-white px-6 py-2 rounded-full">Contacto</a>
+  </div>
+  <!-- <button (click)="toggleTheme()" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-yellow-400">
+    {{ themeService.darkMode() ? '☀️' : '🌙' }}
+  </button> -->
+</nav>
+
+<div class="h-16"></div>
