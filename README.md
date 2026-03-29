@@ -18,7 +18,7 @@
 
 | Tecnología | Uso |
 | :--- | :--- |
-| **Angular 18** | Framework principal (Standalone Components) |
+| **Angular 21** | Framework principal (Standalone Components) |
 | **TypeScript** | Programación robusta con Interfaces de datos |
 | **Tailwind CSS** | Estilizado rápido y diseño responsivo |
 | **Angular Signals** | Gestión de estado reactiva para el Modo Oscuro |
